@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[88]:
-
 
 #Libraries
 import numpy as np
@@ -11,9 +9,6 @@ import copy as cp
 import matplotlib.pyplot as plt
 get_ipython().run_line_magic('matplotlib', 'inline')
 import time
-
-
-# In[72]:
 
 
 # For the first coin, you are paid the value of the coin. For subsequent coins, you are paid the absolute 
@@ -32,9 +27,6 @@ def getPayment(pouch,n):
     return payment
 
 
-# In[114]:
-
-
 #Estimate the expected payment based on x simulations
 def paymentSim(n_sims=10000): #by default run 10000 simulations
     total=0
@@ -51,37 +43,17 @@ def paymentSim(n_sims=10000): #by default run 10000 simulations
     return payment
 
 
-# In[135]:
-
-
 
 # 10 million simulations gave the most accurate results
 
 payment_10=paymentSim(100000000)
 
-
-# In[140]:
-
-
 print(payment_10.mean(), payment_10.std())
 len(payment_10[payment_10>=45])/len(payment_10)
 
 
-# In[137]:
-
-
 payment_20=paymentSim(100000000)
-
-
-# In[139]:
-
 
 print(payment_20.mean(), payment_20.std())
 len(payment_20[payment_20>=160])/len(payment_20)
-
-
-# In[ ]:
-
-
-
 
